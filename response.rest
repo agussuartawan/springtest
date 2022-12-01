@@ -1,0 +1,28 @@
+POST http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+    
+}
+
+###
+PUT  http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+        
+    "id": 1,
+    "name": "Kowoks",
+    "email": "kowoks@gmail.com",
+    "gender": "Male",
+    "password": "password"
+}
+
+###
+GET http://localhost:8080/api/users
+
+###
+GET http://localhost:8080/api/users/2
+
+###
+DELETE  http://localhost:8080/api/users/1

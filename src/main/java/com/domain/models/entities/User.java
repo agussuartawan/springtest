@@ -8,32 +8,28 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "users")
 public class User implements Serializable{
 
         @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        @GeneratedValue(strategy=GenerationType.IDENTITY)
         private Long id;
 
+        @NotEmpty(message = "Name is required.")
         private String name;
 
-        @Column(unique = true)
+        @NotEmpty(message = "Email is required.")
         private String email;
 
+        @NotEmpty(message = "Gender is required.")
         @Column(length = 10)
         private String gender;
 
+        @NotEmpty(message = "Password is required.")
         private String password;
-
-        public User(Long id, String name, String email, String gender, String password) {
-                this.id = id;
-                this.name = name;
-                this.email = email;
-                this.gender = gender;
-                this.password = password;
-        }
 
         public Long getId() {
                 return id;
@@ -74,6 +70,4 @@ public class User implements Serializable{
         public void setPassword(String password) {
                 this.password = password;
         }
-
-        
 }

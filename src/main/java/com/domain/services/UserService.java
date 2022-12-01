@@ -23,11 +23,11 @@ public class UserService {
                 return userRepo.findAll();
         }
 
-        public User findById(Long id){
+        public User findOne(Long id){
                 return userRepo.findById(id).get();
         }
 
-        public void deleteById(Long id){
+        public void deleteOne(Long id){
                 userRepo.deleteById(id);
         }
 }
